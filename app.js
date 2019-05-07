@@ -50,6 +50,7 @@ app.post('/student/login', student.studentLogin);
 // get one student
 app.get('/student/:id', student.getOneStudent);
 
-
+// Delete student
+app.delete('/student/:id', student.deleteOneStudent)
 
 app.listen(3000);

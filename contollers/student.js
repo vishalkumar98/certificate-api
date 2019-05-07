@@ -122,3 +122,16 @@ exports.getOneStudent = (req, res) => {
         }
     })
 };
+
+
+exports.deleteOneStudent = (req, res) => {
+    const rollno = req.params.id;
+    Student.findOneAndRemove({rollno: rollno}, (err, success) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send('Student deletion failed')
+        } else {
+            res.status(200).send('Student deleted')
+        }
+    })
+}
